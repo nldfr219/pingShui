@@ -1,0 +1,338 @@
+﻿
+@{
+    ViewBag.Title = "BaseInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-role="page" id="baseInfo">
+    <div class="width100 header">
+        <div class="header">
+            基本信息
+            <a class="next right " href="#expect" data-role="none" data-transition="slide">下一步</a>
+        </div>
+    </div>
+    <form method="post" action="/Resume/SaveBaseInfo">
+        <ul class="ulcontent">
+            <li>
+                <ul class="urrow">
+                    <li class="label">姓名</li>
+                    <li class="field">
+                        <label class="editText keepall" id="ar-label-jobType" data-role="none"></label>
+
+                    </li>
+                </ul>
+            </li>
+            <li class="line"></li>
+            <li><ul class="urrow">
+                    <li class="label">性别</li>
+                    <li class="field">
+                        <label class="editText keepall" id="ar-label-jobType" data-role="none"></label>
+
+                    </li>
+                </ul>
+                <img class="right sel" src="/img/right.png" data-role="none" />
+            </li>
+            <li class="line"></li>
+            <li><ul class="urrow">
+                    <li class="label">学历</li>
+                    <li class="field">
+                        <label class="editText keepall" id="ar-label-jobType" data-role="none"></label>
+
+                    </li>
+                </ul>
+                <img class="right sel" src="/img/right.png" data-role="none" />
+            </li>
+            <li class="line"></li>
+            <li>
+                <ul class="urrow">
+                    <li class="label">工作经验</li>
+                    <li class="field"><input type="text" class="text" id="experience" name="experience" data-role="none" /></li>
+                </ul>
+            </li>
+            <li class="line"></li>
+            <li><ul class="urrow">
+                <li class="label">工作地点</li>
+                <li class="field">
+                    <label class="editText keepall" id="ar-label-jobType" data-role="none"></label>
+
+                </li>
+            </ul>
+            <img class="right sel" src="/img/right.png" data-role="none" /></li>
+            <li class="line"></li>
+            <li>
+                <ul class="urrow">
+                    <li class="label">目前年薪</li>
+                    <li class="field"><input type="text" class="text" id="salary" name="salary" data-role="none" /></li>
+                </ul>
+            </li>
+        </ul>
+    </form>
+</div>
+
+<div data-role="page" id="expect">
+    <div class="width100 header">
+        <a class="back left" href="#baseInfo" data-transition="slide" data-direction="reverse"><img src="/img/back.png" /></a>
+        工作期望
+        <a class="next right " href="#jobStatus" data-role="none" data-transition="slide">下一步</a>
+    </div>
+    <ul class="ulcontent">
+        <li><ul class="urrow">
+    <li class="label">期望行业</li>
+    <li class="field">
+        <label class="editText keepall" id="ar-label-jobType" data-role="none"></label>
+
+    </li>
+</ul>
+<img class="right sel" src="/img/right.png" data-role="none" /></li>
+        <li class="line"></li>
+        <li><ul class="urrow">
+    <li class="label">期望职业</li>
+    <li class="field">
+        <label class="editText keepall" id="ar-label-jobType" data-role="none"></label>
+
+    </li>
+</ul>
+<img class="right sel" src="/img/right.png" data-role="none" /></li>
+        <li class="line"></li>
+        <li>
+            <ul class="urrow">
+                <li class="label">期望薪资</li>
+                <li class="field">
+                    <label class="editText keepall" id="ar-label-jobType" data-role="none"></label>
+
+                </li>
+            </ul>
+
+        </li>
+        <li class="line"></li>
+        <li><ul class="urrow">
+    <li class="label">期望工作地点</li>
+    <li class="field">
+        <label class="editText keepall" id="ar-label-jobType" data-role="none"></label>
+
+    </li>
+</ul>
+<img class="right sel" src="/img/right.png" data-role="none" /></li>
+    </ul>
+</div>
+
+<div data-role="page" id="jobStatus">
+    <div class="width100 header">
+        <a class="back left" href="#expect" data-transition="slide" data-direction="reverse"><img src="/img/back.png" /></a>
+        求职状态
+        <a class="next right " href="#workexperience" data-role="none" data-transition="slide">下一步</a>
+    </div>
+    <ul class="ulcontent">
+        <li>在职看看新的机会</li>
+        <li class="line"></li>
+        <li>在职，急寻机会</li>
+        <li class="line"></li>
+        <li>在职，所有顾问请勿骚扰</li>
+        <li class="line"></li>
+        <li>离职，正在找工作</li>
+    </ul>
+    <ul class="ulcontent">
+        <li><ul class="urrow">
+    <li class="label">预计到岗时间</li>
+    <li class="field"><input type="month" style="width:120px" class="editText keepall" data-role="none" /></li>
+</ul></li>
+    </ul>
+</div>
+
+
+<div data-role="page" id="workexperience">
+    <div class="width100 header">
+        <a class="back left" href="#jobStatus" data-transition="slide" data-direction="reverse"><img src="/img/back.png" /></a>
+        工作经历
+        <a class="next right " href="#education" data-role="none" data-transition="slide">下一步</a>
+    </div>
+    <div style="width:100%; border-bottom:1px solid #979797">
+        <div class="u-title-b" style="width:100%; border-bottom:1px solid #979797" id="edit-info-adduc">&nbsp;&nbsp;<img src="/img/editadd.png" />&nbsp;&nbsp;添加工作经历</div>
+
+        <div id="edit-info-usercompany">
+            <div class='u-title margin1em'>&nbsp;&nbsp;开发经理 at 智联</div>
+            <div class='u-note-c'>2012-至今 | 北京</div>
+        </div>
+
+    </div>
+</div>
+
+<div data-role='page' id='userCompany'>
+    <div class="cusContent" data-role="content">
+        <div class="header">
+            <a class="back left" href="#workexperience" data-transition="slide" id="userCompany-back" data-direction="reverse"><img src="/img/back.png" /></a>
+            添加工作经历
+            <a class="next right" href="#workexperience" data-role="none" data-direction="reverse" data-transition="slide" id="userCompany-save">保存</a>
+        </div>
+        <div>
+            <input type="hidden" id="uc-hidden-ucid" value='0' />
+            <ul class="ulcontent">
+                <li>
+                    <ul class="urrow">
+                        <li class="label">公司</li>
+                        <li class="field">
+                            <input type="text" class="text keepall" id="uc-input-company"  data-role="none" />
+                        </li>
+                    </ul>
+                    <img class="sel" src="/img/right.png" data-role="none" />
+                </li>
+                <li class="line"></li>
+                <li>
+                    <ul class="urrow">
+                        <li class="label">职位</li>
+                        <li class="field">
+                            <input type="text" class="text keepall" id="uc-input-position"  data-role="none" />
+
+                        </li>
+                    </ul>
+                    <img class="right sel" src="/img/right.png" data-role="none" />
+                </li>
+                <li class="line"></li>
+                <li id="uc-City">
+                    <ul class="urrow">
+                        <li class="label">所在城市</li>
+                        <li class="field">
+                            <label class="editText keepall" id="uc-label-city" data-role="none"></label>
+
+                        </li>
+                    </ul>
+                    <input type="hidden" id="uc-hidden-city" />
+                    <img class="right sel" src="/img/right.png" data-role="none" />
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <ul class="urrow">
+                        <li class="label">开始时间</li>
+                        <li class="field">
+                            <input type="month" style="width:120px" class="editText keepall" id="uc-input-start" placeholder="请选择日期"  data-role="none" />
+
+                        </li>
+                    </ul>
+                    <img class="right sel" src="/img/right.png" data-role="none" />
+                </li>
+                <li class="line"></li>
+                <li>
+                    <ul class="urrow">
+                        <li class="label">结束时间</li>
+                        <li class="field">
+                            <input type="month" style="width:120px" class="editText keepall" id="uc-input-end" placeholder="请选择日期"  data-role="none" />
+
+                        </li>
+                    </ul>
+                    <img class="right sel" src="/img/right.png" data-role="none" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="education">
+    <div class="width100 header">
+        <a class="back left" href="#workexperience" data-transition="slide" data-direction="reverse"><img src="/img/back.png" /></a>
+        教育经历
+        <a class="next right " href="javascript:void(0)" data-role="none" data-transition="slide">下一步</a>
+    </div>
+    <div style="width:100%; border-bottom:1px solid #979797">
+        <div class="u-title-b" style="width:100%; border-bottom:1px solid #979797" id="edit-info-added">&nbsp;&nbsp;<img src="/img/editadd.png" />&nbsp;&nbsp;添加教育经历</div>
+
+        <div id="edit-info-usercompany">
+            <div class='u-title margin1em'>&nbsp;&nbsp;清华大学 at 本科</div>
+            <div class='u-note-c'>计算机科学与技术 2012-至今</div>
+        </div>
+
+    </div>
+</div>
+
+<div data-role='page' id='userEducation'>
+    <div class="cusContent" data-role="content">
+        <div class="header">
+            <a class="back left" href="#education" data-transition="slide" id="useredu-back" data-direction="reverse"><img src="/img/back.png" /></a>
+            添加教育经历
+            <a class="next right" href="#education" data-role=" none" id="useredu-save">保存</a>
+        </div>
+        <div>
+            <input type="hidden" id="ue-hidden-ueid" value='0' />
+            <ul class="ulcontent">
+                <li>
+                    <ul class="urrow">
+                        <li class="label">学校</li>
+                        <li class="field">
+                            <input type="text" class="text keepall" id="ue-input-school" data-role="none" />
+                        </li>
+                    </ul>
+                    <img class="sel" src="/img/right.png" data-role="none" />
+                </li>
+                <li class="line"></li>
+                <li>
+                    <ul class="urrow">
+                        <li class="label">专业</li>
+                        <li class="field">
+                            <input type="text" class="text keepall" id="ue-input-major" data-role="none" />
+
+                        </li>
+                    </ul>
+                    <img class="right sel" src="/img/right.png" data-role="none" />
+                </li>
+                <li class="line"></li>
+                <li id="ue-education">
+                    <ul class="urrow">
+                        <li class="label">学历</li>
+                        <li class="field">
+                            <label class="editText keepall" id="ue-label-education" data-role="none"><label>
+
+                        </li>
+                    </ul>
+                    <input type="hidden" id="ue-hidden-education" />
+                    <img class="right sel" src="/img/right.png" data-role="none" />
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <ul class="urrow">
+                        <li class="label">开始时间</li>
+                        <li class="field">
+                            <input type="month" style="width:120px;" class="editText keepall" placeholder="请选择日期" id="ue-input-start" data-role="none" />
+
+                        </li>
+                    </ul>
+                    <img class="right sel" src="/img/right.png" data-role="none" />
+                </li>
+                <li class="line"></li>
+                <li>
+                    <ul class="urrow">
+                        <li class="label">结束时间</li>
+                        <li class="field">
+
+                            <input type="month" style=' width:120px;' class="editText keepall" placeholder="请选择日期" data-role="none" id="ue-input-end" />
+
+                        </li>
+                    </ul>
+                    <img class="right sel" src="/img/right.png" data-role="none" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<a id="cushref" data-transition="slide"></a>
+<a id="cureverse" data-transition="slide" data-direction="reverse"></a>
+
+@section scripts{
+<script type="text/javascript" src="/js/public.js" ></script>
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#edit-info-adduc").click(function () {
+            Common.redirect("#userCompany");
+        });
+
+        $("#edit-info-added").click(function () {
+            Common.redirect("#userEducation");
+        });
+    });
+
+</script>
+        
+}

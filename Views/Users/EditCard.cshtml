@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "填写名牌-聘谁";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin:0; overflow:hidden; padding:0;" >
+    
+        <div class="cusContent">
+            <div>
+                <img id='user-info-icon' style="width:100%;height:8em" src='/img/uploadAvatar.png' />
+                <center>
+                    <br />
+                    <a class="btn" id="selectPhoto" href="javascript:void(0)">选择照片</a>
+                </center>
+                <input type="file" style="display:none" data-role="none" accept="image/*" id="cameraInput" name="cameraInput">
+                <input type="hidden" data-role="none" id="Avatar" name="Avatar">
+                <ul class="ulcontent">
+                    <li>
+                        <input id='card-name' name="Name" type='text' placeholder='真实姓名' maxlength="20" data-role="none" class="text" />
+                    </li>
+                    <li class="line"></li>
+                    <li>
+                        <input id='card-company' name="Company" type='text' placeholder='任职公司' data-role="none" class="text" maxlength="50" />
+                    </li>
+                    <li class="line"></li>
+                    <li>
+                        <input id='card-position' name="Position" type='text' placeholder='职位' data-role="none" class="text" maxlength="50" />
+                    </li>
+                    <li class="line"></li>
+                    <li>
+                        <input id='card-phone' name="Phone" type='text' placeholder='电话' data-role="none" class="text" maxlength="50" />
+                    </li>
+                    <li class="line"></li>
+                    <li>
+                        <input id='card-weixin' name="Weixin" type='text' placeholder='微信' data-role="none" class="text" maxlength="50" />
+                    </li>
+                </ul>
+                <center>
+                    <br />
+                    <a class="btn" id="showCard" href="javascript:void(0)">预览名片</a>
+                </center>
+                <br />
+                <br />
+            </div>
+        </div>
+    
+</div>
+@section scripts{
+    <script src='/js/public.js'></script>
+    <script src='/js/account.js'></script>
+    <script src="/js/editShareCard.js"></script>
+    <script type="text/javascript">
+
+
+        $(function () {
+            var edit = new EditShareCard();
+            edit.init();
+        });
+
+    </script>
+}

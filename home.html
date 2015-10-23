@@ -1,0 +1,148 @@
+﻿<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/spage.css"/>
+		<link rel="stylesheet" href="css/common2.css"/>
+        <link rel="stylesheet" href="css/transtion.css" />
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+        <div data-role="page" id="homepage" class="home_bg">
+            <div class="floatFooter">
+                <center>
+                    <a href="javascript:void(0)" id="registerBtn" class="home_button reg"><span class="home_button_text">注册</span></a>
+                    <a href="javascript:void(0)" id="loginBtn" class="home_button login"><span class="home_button_text">登录</span></a>
+                </center>
+            </div>
+        </div>	
+
+        <div class="common_bg" id="loginpage" data-role="page">
+
+            <center>
+                <dl class="dl_form">
+                    <dt id="loginBack"><img class="img_close" src="img/close.png" /></dt>
+                    <dt>
+                    <dd>
+                        <input class="dd_form" type="text" id="username" placeholder="请输入手机号或者邮箱" />
+                    </dd>
+                    <dd class="dd_line"></dd>
+                    <dd>
+                        <input class="dd_form" type="password" id="password" placeholder="请输入密码" />
+                    </dd>
+                    </dt>
+                    <dt>
+                        <a href="javascript:void(0)" class="common_button" id="loginop"><span class="home_button_text">确定</span></a>
+                    </dt>
+                    <dt>
+                        <label class="forget_pwd login_font">忘记密码</label><label id="labReg" class="join login_font">立即加入</label>
+                    </dt>
+                </dl>
+            </center>
+
+        </div>
+
+        <div class="common_bg" id="registerPage" data-role="page">
+            <center>
+                <dl class="dl_form">
+                    <img id="registerBack" class="img_close" src="img/close.png" />
+                    <dt>
+                    <dd>
+                        <input class="dd_form" type="text" id="reUsername" placeholder="请输入手机号或者邮箱" />
+                    </dd>
+                    <dd class="dd_line"></dd>
+                    <dd>
+                        <input class="dd_form" type="password" id="rePassword" placeholder="请输入密码" />
+                    </dd>
+                    <dd class="dd_line"></dd>
+                    <dd>
+                        <input class="dd_form" type="password" id="rePasswordConfirm" placeholder="请确认密码" />
+                    </dd>
+                    </dt>
+                    <dt>
+                        <center>
+                            <label class="login_font">点击"立即加入"，即表示您同意聘谁的用户协议</label>
+                        </center>
+                    </dt>
+                    <dt>
+                        <a href="javascript:void(0)" id="registerOp" class="common_button"><span class="home_button_text">确定</span></a>
+                    </dt>
+                    <dt>
+                        <center>
+                            <label id="gotoLog" class="login_font">已有帐号？登录</label>
+                        </center>
+                    </dt>
+                </dl>
+            </center>
+
+        </div>
+
+        <div data-role="page" id="card" class="common_bg">
+            <center>
+                <dl class="dl_form">
+                    <dt>
+                    <dd>
+                        <a href="javascript:void(0)" id="selectAvatar" class="img_choose">
+                            <i class="fa fa-camera img_icon devselectAvatar"></i>
+                            <label class="img_font devselectAvatar">请上传图片</label>
+                            <img style="display: none;" id="avatarImg" class="upload_img" />
+                        </a>
+                        <input type="file" style="display:none" data-role="none" accept="image/*" id="cameraInput" name="cameraInput">
+                        <input type="hidden" data-role="none" id="Avatar" name="Avatar">
+                    </dd>
+                    <dd class="dd_line"></dd>
+                    <dd>
+                        <input class="dd_form" type="text" id="card_realname" placeholder="真实姓名" />
+                    </dd>
+                    <dd class="dd_line"></dd>
+                    <dd>
+                        <input class="dd_form" type="text" id="card_company" placeholder="公司名称" />
+                    </dd>
+                    <dd class="dd_line"></dd>
+                    <dd>
+                        <input class="dd_form" type="text" id="card_position" placeholder="职位" />
+                    </dd>
+                    <dd class="dd_line"></dd>
+                    <dd>
+                        <input class="dd_form" type="email" id="card_email" placeholder="邮箱" />
+                    </dd>
+                    </dt>
+                    <dt>
+                        <a href="javascript:void(0)" id="saveCardBtn" class="common_button"><span class="home_button_text">立即加入</span></a>
+                    </dt>
+                </dl>
+            </center>
+        </div>
+	</body>
+</html>
+<script src="/js/whojoin/underscore.js"></script>
+<script src="/js/whojoin/backbone-min.js"></script>
+<script src="js/whojoin/common.js"></script>
+<script src="js/whojoin/lib/user.js"></script>
+<script src="js/whojoin/lib/card.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var screenHeight = $(window).height();
+        $("#homgbg").height(screenHeight);
+
+        if (Common.userInfo() != null)
+        {
+            if (Common.userInfo().UserInfoId > 0)
+            {
+                location.href = "/Talent/TalentInfo";
+            }
+        }
+
+        $("#loginBtn").click(function () {
+            var login = LoginViewSingleton();
+            Common.slideup("loginpage");
+        });
+
+        $("#registerBtn").click(function () {
+            var register = RegisterViewSingleton();
+            Common.slideup("registerPage");
+        });
+
+    });
+
+</script>

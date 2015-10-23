@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    @*<meta name="yes" name="apple-mobile-web-app-capable" />*@
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/css/jquery.mobile-whojoin.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <script src="/js/jquery.js"></script>
+
+    <script src="/js/jquery.mobile-1.4.5.js"></script>
+    <script src="/js/jweixin.js"></script>
+    <script src="/js/sha1.js"></script>
+
+    @RenderSection("headerlink", false)
+
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>
+@RenderSection("scripts", required: false)

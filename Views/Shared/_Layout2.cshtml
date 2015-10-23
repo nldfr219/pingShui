@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>@ViewBag.Title</title>
+    <script src="/js/jquery.js"></script>
+    <link rel="stylesheet" href="/css/transtion.css">
+    <link rel="stylesheet" href="/css/common.css">
+
+    <link rel="stylesheet" href="/css/spage.css">
+    <link rel="stylesheet" href="/css/common2.css">
+    <link rel="stylesheet" href="/css/main2.css">
+    @RenderSection("headerlink",false)
+
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>
+
+<script src="/js/whojoin/underscore.js"></script>
+<script src="/js/whojoin/backbone-min.js"></script>
+<script type="text/javascript" src="/js/whojoin/common.js"></script>
+@RenderSection("scripts", required: false)

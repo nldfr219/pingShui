@@ -1,0 +1,291 @@
+﻿body {
+    font-family:Arial,宋体;
+    font-size: 1em;
+}
+
+a {
+    text-decoration:none;
+}
+
+textarea {
+    border:1px solid #CFD4DB;
+    padding:0;
+    margin:0;
+    height:60px;
+    line-height:18px;
+    padding:3px 5px;
+}
+
+
+input,input[type='month'],input[type='date'] {
+    background-color:transparent;
+}
+
+select {
+    background-color:transparent;
+    height:28px;
+    line-height:28px;
+    font-size:14px;
+    vertical-align:middle;
+    padding:0;
+    text-align:left;
+    border:none;
+}
+
+input[type=text],label {
+    height:28px;
+    line-height:28px;
+    font-size:14px;
+    vertical-align:middle;
+}
+
+
+/* 模块相关 start */
+
+.header {
+    background-color:#fff;
+    text-align:center;
+    vertical-align:middle;
+    color:#979797;
+    height:48px;
+    line-height:48px;
+    font-size:18px;
+    border-bottom:solid 2px #2AAAC9;
+}
+
+.back {
+   border:0px;
+   width:2.5em;
+   height:48px;
+   font-size:18px;
+   line-height:3em;
+   vertical-align:middle;
+   padding-top:2px;
+   position:absolute;
+   left:0px;
+}
+
+.back img{
+	border:0px;
+	width:0.6em;
+	height:1.2em;
+}
+
+.next {
+   background-color:Transparent;
+   border:0px;
+   height:48px;
+   line-height:48px;
+   width:4em;
+   position:absolute;
+   right:0px;
+   top:0px;
+   cursor:pointer;
+}
+
+.headerblueimg {
+    text-align:center;
+    vertical-align:middle;
+    color:#fff;
+    height:48px;
+    line-height:48px;
+    font-size:18px;
+    background:url(/img/headerbg.png);
+    filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+}
+
+.module {
+    padding-left:10px;
+	padding-right:10px;
+}
+
+.formmodule {
+    padding-left:10px;
+	padding-right:40px;
+}
+
+.prompt {
+
+    word-wrap: break-word;
+	height:auto;
+	line-height:20px;
+    display:block;
+    vertical-align:middle;
+}
+
+.ulmodule {
+    width:100%;
+    margin:0;
+    list-style:none;
+    padding-left:0px;
+}
+
+.ulmodule li {
+    height:40px;
+    line-height:42px;
+    vertical-align:middle;
+}
+
+.ulmodule li.line {
+    background-color:#CFD4DB;
+    height:1.1px;
+    max-height:1px;
+}
+
+.ulmodule li .sel{
+    border:0px;
+	width:20px;
+	height:1.5em;
+	margin-top:10px;
+	right:10px;
+	position:absolute;
+}
+
+/* 模块相关 end */
+
+/*相关背景颜色 start*/
+
+.graybg {
+    background-color:#f5f5f5;
+}
+
+.whiteBg {
+    background-color:#ffffff;
+}
+
+.blueBg {
+    background-color:#2AAAC9;
+}
+.darkgrayBg {
+    background-color:#979797;
+}
+
+/*相关背景颜色 end*/
+
+
+
+/*相关位置样式 start*/
+
+.paddingleft10 {
+    padding-left:10px;
+}
+.floatLeft {
+    float:left;
+}
+.floatRight {
+    float:right;
+}
+.marginleft10 {
+   margin-left:10px;
+}
+.marginleft20 {
+   margin-left:20px;
+}
+.margintop20 {
+   margin-top:20px;
+}
+.margintop10 {
+   margin-top:10px;
+}
+
+/*相关位置样式 end*/
+
+/*边框样式 start*/
+
+.grayborder {
+    border:1px solid #CFD4DB;
+}
+
+/*边框样式 end*/
+
+/*字体相关 start*/
+
+.fontBlue18 {
+    color:#2aaac9;
+    font-size:18px;   
+}
+.fontBlue {
+    color:#2aaac9;   
+}
+
+.fontWhite18 {
+    color:white;
+    font-size:18px;
+}
+
+.fontGray16 {
+    color:#979797;
+    font-size:16px;
+}
+
+.fontWhite16 {
+    color:#fff;
+    font-size:16px;
+}
+
+.fontWhite14 {
+    color:white;
+    font-size:14px;
+}
+
+.fontBlack {
+    color:#000;
+}
+
+.fontWhite {
+    color:white;
+}
+
+.fontGray {
+    color:#979797;
+}
+
+.blod {
+    font-weight:bold;
+}
+
+/*字体相关 end*/
+
+/*按钮相关 start*/
+
+.btnSmall {
+    display:block;
+    padding:5px 15px;
+    border-radius:2px;
+    line-height:14px;
+}
+
+.btnFill {
+    display:block;
+    padding:5px 0px;
+    width:100%;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.btnWithText {
+    vertical-align:middle;
+    text-align:center;
+    padding:9px 40px;
+    border-radius:3px;
+
+}
+
+/*按钮相关 end*/
+
+/* text start */
+
+.text {
+    width:100%;
+    border:none;
+}
+
+.formLabel {
+    position:absolute;
+    margin-left:10px;
+}
+
+
+/* text end */

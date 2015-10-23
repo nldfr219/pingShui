@@ -1,0 +1,288 @@
+﻿@{
+    ViewBag.Title = "评价顾问-聘谁";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div data-role='page' id='appraise'>
+    <div class="cusContent" data-role="content">
+        <div class="header">
+           评价顾问
+        </div>
+        <div>
+            <div class='lsrow'>
+                <span class='u-Info'>
+                    作为聘谁最重要的服务对象，我们真挚的邀请您对顾问的服务做出评价！
+                </span>
+            </div>
+            <div style="border: 1px solid #CFD4DB">
+                <table class="editTable" style="margin-top:15px;">
+                    <tr>
+                        <td rowspan="4">
+                            <img src="./img/edituser.png" id="avatarimg" width="120" height="120" />
+                            <input type="hidden" id="edit-info-avatar" />
+                        </td>
+                        <td class="appraise-name" id="realname"></td>
+                    </tr>
+                    <tr><td class="appraise-label" id="position"></td></tr>
+                    <tr><td class="appraise-label" id="company"></td></tr>
+                    <tr><td>&nbsp;</td></tr>
+                    </table>
+            </div>
+            <br />
+            <div class="ed-note-c keepall">是否已沟通</div>
+            <table class="radio-select">
+                <tr><td><span><input type="radio" name="IsCommunicate" value="1" data-role="none" /></span>是</td><td><input type="radio" name="IsCommunicate" value="0" data-role="none" />否</td></tr>
+            </table>
+            <div class="ed-note-c keepall">是否有下一步合作</div>
+            <table class="radio-select">
+                <tr><td><span><input type="radio" name="IsCooperate" value="1" data-role="none" /></span>是</td><td><input type="radio" name="IsCooperate" value="0" data-role="none" />否</td></tr>
+            </table>
+            <ul class="ulcontent2">
+                <li id="areaIndustry">
+                    <ul class="urrow">
+                        <li class="label3">下一次双方跟进时间：</li>
+                        <li class="field3">
+                           <input type="date" style="width:120px;" id="NextTime" class="editText2 keepall" placeholder="请选择日期" id="ue-input-start" data-role="none" />
+
+                        </li>
+                    </ul>
+                    <input type="hidden" id="ar-hidden-industry" data-role="none" />
+                    <img class="sel" src="/img/right.png" data-role="none" />
+                </li>
+            </ul>
+            <div class="ed-note-c keepall">评价</div>
+            <div style="width:100%; padding-left:10px; padding-right:10px;">
+                <textarea id="description" data-role="none"></textarea>
+            </div>
+            <ul class="ulcontent2">
+                <li id="gtagli">
+                    <ul class="urrow">
+                        <li class="label4">好评</li>
+                        <li class="field4">
+                            <div>
+                                <ul id="gtag-show" class="u-tag2">
+
+                                </ul>
+                                </div>
+                        </li>
+                    </ul>
+                    <input type="hidden" id="ar-hidden-industry" data-role="none" />
+                    <img class="sel" src="/img/right.png" data-role="none" />
+                </li>
+                <li class="line"></li>
+                <li id="btagli">
+                    <ul class="urrow">
+                        <li class="label4">差评</li>
+                        <li class="field4">
+                            <ul class="u-tag2" id="btag-show">
+
+                            </ul>
+
+                        </li>
+                    </ul>
+                    <input type="hidden" id="ar-hidden-industry" data-role="none" />
+                    <img class="sel" src="/img/right.png" data-role="none" />
+                </li>
+            </ul>
+            <center>
+                <a href="javascript:void(0)" id="appsubmit" class="btn2">好了</a>
+            </center>
+            <div style="height:40px;"></div>
+        </div>
+    </div>
+</div>
+
+<div data-role='page' id='gtags'>
+    <div class="cusContent" data-role="content">
+        <div class="header">
+            <a class="back left gtag-save" href="javascript:void(0)"><img src="/img/back.png" /></a>
+            优点
+            <a class="next right gtag-save" href="javascript:void(0)" data-role="none">保存</a>
+        </div>
+        <div>
+            <ul id="a-tagg" class="u-tag3">
+                
+            </ul>
+        </div>
+        <div>
+            <div style="margin-left:10px"><input type="text" id="addgtagText" class="tagtext" data-role="none" /><a href="javascript:void(0)" id="addgtag" class="btn3">添加标签</a></div>
+        </div>
+    </div>
+</div>
+
+<div data-role='page' id='btags'>
+    <div class="cusContent" data-role="content">
+        <div class="header">
+            <a class="back left btag-save" href="javascript:void(0)"><img src="/img/back.png" /></a>
+            缺点
+            <a class="next right btag-save" href="javascript:void(0)" data-role="none">保存</a>
+        </div>
+        <div>
+            <ul id="a-tagb" class="u-tag3">
+                
+            </ul>
+        </div>
+        <div>
+            <div style="margin-left:10px"><input type="text" id="addbtagText" class="tagbtext" data-role="none" /><a href="javascript:void(0)" id="addbtag" class="btn4">添加标签</a></div>
+        </div>
+    </div>
+</div>
+
+<div data-role='page' id='resultPage'>
+    <div class="cusContent" data-role="content">
+        <center>
+            <br />
+            <br />
+            感谢您的参与
+        </center>
+    </div>
+</div>
+
+<a id="cushref" data-transition="slide"></a>
+<a id="cureverse" data-transition="slide" data-direction="reverse"></a>
+@section scripts{
+<script src='/js/public.js'></script>
+<script src='/js/appraise.js'></script>
+<script type="text/javascript">
+    $(function () {
+        var app = new Appraise();
+        var userInfoId = Common.getUrlParam("UserInfoId");
+        app.getUser(userInfoId);
+
+        app.getTagList(Common.getUrlParam("Appraiser"), 0);
+        app.getTagList(Common.getUrlParam("Appraiser"), 1);
+
+        $("#gtagli").click(function () {
+            Common.redirect("#gtags");
+        });
+
+        $("#btagli").click(function () {
+            Common.redirect("#btags");
+        });
+        
+        $(".gtag-save").click(function () {
+            $("#gtag-show").html("");
+            $(".tag-g-s").each(function () {
+                var tag = $("<li><span class='tag-g'></span></li>");
+                tag.find("span").text($(this).text());
+                $("#gtag-show").append(tag);
+            });
+
+            Common.reverse("#appraise");
+        });
+
+        $(".btag-save").click(function () {
+            $("#btag-show").html("");
+            $(".tag-b-s").each(function () {
+                var tag = $("<li><span class='tag-b'></span></li>");
+                tag.find("span").text($(this).text());
+                $("#btag-show").append(tag);
+            });
+
+            Common.reverse("#appraise");
+        });
+
+        $("#addgtag").click(function () {
+
+            var len = $("#a-tagg li").length;
+
+            if (len > 40) {
+                alert("您加的标签太多了");
+            }
+            else {
+                var val = $("#addgtagText").val();
+
+                if (val == "") {
+                    alert("请填写标签名字");
+                }
+                else if (val.length > 7)
+                {
+                    alert("标签最多7个字");
+                }
+                else {
+                    var html = $("<li><span class='tag-g'></span></li>");
+                    html.find("span").text(val);
+
+                    var appraise = new Appraise();
+                    appraise.addTag(Common.getUrlParam("Appraiser"),val,0);
+
+                    html.find("span").click(function () {
+                        if ($(this).attr("class") == "tag-g") {
+                            var len = $(".tag-g-s").length;
+
+                            if (len >= 3) {
+                                alert("最多只能选三项");
+                            }
+                            else {
+                                $(this).removeClass("tag-g");
+                                $(this).addClass("tag-g-s");
+                            }
+                        }
+                        else {
+                            $(this).removeClass("tag-g-s");
+                            $(this).addClass("tag-g");
+                        }
+                    });
+                    $("#addgtagText").val("");
+                    $("#a-tagg").append(html);
+                }
+            }
+        });
+
+
+        $("#addbtag").click(function () {
+
+            var len = $("#a-tagb li").length;
+
+            if (len > 20) {
+                alert("您加的标签太多了");
+            }
+            else {
+                var val = $("#addbtagText").val();
+
+                if (val == "") {
+                    alert("请填写标签名字");
+                }
+                else if (val.length > 7) {
+                    alert("标签最多7个字");
+                }
+                else {
+                    var html = $("<li><span class='tag-b'></span></li>");
+                    html.find("span").text(val);
+
+                    var appraise = new Appraise();
+                    appraise.addTag(Common.getUrlParam("Appraiser"), val, 1);
+                    html.find("span").click(function () {
+                        if ($(this).attr("class") == "tag-b") {
+                            var len = $(".tag-b-s").length;
+
+                            if (len >= 3) {
+                                alert("最多只能选三项");
+                            }
+                            else {
+                                $(this).removeClass("tag-b");
+                                $(this).addClass("tag-b-s");
+                            }
+                        }
+                        else {
+                            $(this).removeClass("tag-b-s");
+                            $(this).addClass("tag-b");
+                        }
+                    });
+                    $("#addbtagText").val("");
+
+                    $("#a-tagb").append(html);
+                }
+            }
+        });
+
+        $("#appsubmit").click(function () {
+            var appraise = new Appraise();
+            appraise.save();
+        });
+
+    });
+
+</script>    
+}

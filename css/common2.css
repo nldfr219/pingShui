@@ -1,0 +1,168 @@
+﻿body{
+	margin: 0;
+	padding: 0;	
+	}
+a{
+	text-decoration:none;
+}
+/*start公共背景，比如注册登录交换名片修改资料信息等*/
+.common_bg{
+	height:100%;
+	background:url(../img/comm_bg.png) no-repeat center center fixed;
+	background-size: cover;
+		
+	}
+dl,dt,dd{
+	padding: 0;
+	margin: 0;
+}
+.dl_form{
+	width: 90%;
+	padding-top: 40px;
+}
+
+.dd_form{
+	padding-left: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	width: 100%;
+	height: 40px;
+	font-size: 14px;
+	color: black;
+	border:1px;
+	border-radius: 0px;
+}
+.dd_line{
+	border-bottom: solid 1px #ccc;
+}
+.img_close{
+	width: 20px;
+	height: 20px;
+	margin-bottom: 5px;
+	margin-right: 0;
+	float: right;
+}
+.img_close:active{
+	filter: alpha(opacity=70)
+}
+.img_back{
+	display: block;
+	height: 40px;
+	width: 100%;
+}
+.img_back_font{
+	font-size: 30px; 
+	color: white;
+	margin-bottom: 5px;
+	float: left;
+}
+.common_button{
+	display: block;
+	margin-top: 10px;
+	width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font: normal 16px/30px arial,sans-serif;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+	color: #FFFFFF;	
+	background-color: #2AAAC9;	
+}
+.common_button:active{
+	background-color: #3098b3;
+	color: #f5f5f5;
+}
+/*end公共背景，比如注册登录交换名片修改资料信息等*/
+
+/*start固定头部样式*/
+.floatHeader{
+	width:100%;
+	height:65px;
+	position:fixed;
+	top:0;
+}
+.header_color{
+	background-color: black;
+}
+.header_bg{
+	background-image: url(../img/status_gb.png);
+}
+/*end固定头部样式*/
+
+/*start固定底部样式*/
+.floatFooter{
+	width:100%;
+	height: 45px;
+	position:fixed;
+	bottom:0;
+	_position:absolute;
+	_margin-top:expression(this.style.pixelHeight+document.documentElement.scrollTop);
+}
+.footer_color{
+	background-color: #2AAAC9;
+}
+/*end固定底部样式*/
+
+/*图标相关的样式*/
+.pick_icon{
+	font-size: 30px;
+	color: #2AAAC9;
+}/*选中的图标样式*/
+
+.status_font_awesome{
+	margin-left: 10px;
+	font-size: 30px;
+	color: white;
+}/*状态栏图标for font awesome*/
+.status_icon{
+	margin-right: 10px;
+	width: 21.92px; 
+	height: 30px;
+	
+	margin-left: 20px
+}/*状态栏图标for图片*/
+
+.click_icon_left{
+	position: fixed;
+	height: 45px;
+	width: 50px;
+	line-height: 45px;	
+	left: 0px;
+}/*图标左侧点击区域*/
+.click_icon_right{
+	position: fixed;
+	height: 45px;
+	width: 50px;
+	line-height: 45px;	
+	right: 0px;
+}/*图标左侧点击区域*/
+
+/*start三栏式布局*/
+#left,#right{
+	position: absolute;
+	top:25px;
+	width: 34px;
+	color: white;
+	font-size: 14px;
+}
+#left{
+	margin-top: 10px;
+	left: 10px;
+}
+#right{
+	right: 7px;
+	}
+#middle{
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 100px;
+	height: 65px;
+	color: white;
+}
+.middle_font{
+	display:inline-block;
+	margin-top: 34px;
+}
+/*end三栏式布局*/

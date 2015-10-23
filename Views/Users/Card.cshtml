@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "名片";
+}
+
+<div data-role='page' id='hr-view-hunter-infomation' class="scrollpage">
+    <div class="cusContent ">
+        <div class='detailContent'>
+            <div>
+                <div><img id="hrv-avatar" data-role="none" src='/img/list1.png' /></div>
+
+                <div class='lsrow'><span class='lsName' id="info-name"></span><span class='u-Info' id="info-title"></span></div>
+                <div class="u-detail" id="info-summary"></div>
+                <div class="u-title margin1em"><img class="effect" src='/img/effect.png' />&nbsp;&nbsp;企业印象</div>
+                <div>
+                    <ul class="u-tag">
+                        <li><span class="tag-g">人脉广</span></li>
+                        <li><span class="tag-g">非常有效率</span></li>
+                        <li><span class="tag-g">行业理解深</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="u-tag">
+                        <li><span class="tag-b">不专业</span></li>
+                        <li><span class="tag-b">联系不及时</span></li>
+                        <li><span class="tag-b">还有待改进</span></li>
+                    </ul>
+                </div>
+
+                <div class="u-title margin1em"><img class="phone" src='/img/note.png' />&nbsp;&nbsp;专注领域</div>
+                <div class="eu-note-c keepall" id="de-info-industry">专注行业：</div>
+                <div class="eu-note-c keepall" id="de-info-jobType">专注职能：</div>
+                <div class="eu-note-c keepall" id="de-info-areaClity">人脉分布：</div>
+                <div class="eu-note-c keepall" id="de-info-language">语言技能：</div>
+
+
+                <div id="de-info-usercompany">
+
+                </div>
+
+                <div id="de-info-usereducation">
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div style="height:4.5em">&nbsp;</div>
+   
+</div>
+
+@section scripts{
+    <script src='/js/public.js'></script>
+    <script src='/js/userDetail.js'></script>
+    <script type="text/javascript">
+
+        $(function () {
+            var userDetail = new UserDetail();
+            userDetail.init(40, 0, 1);
+        });
+
+    </script>
+    }
+

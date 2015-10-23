@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "SingleSelection";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-role="page">
+    <div class="width100 header">
+        <a class="back left" href="Expectation"><img src="/Content/images/carat-l-white.png" /></a>
+        单选
+        <a class="next right" href="WorkExperience">保存</a>
+    </div>
+    <ul class="ulcontent">
+        <li class="devItem">男</li>
+        <li class="line"></li>
+        <li>女</li>
+    </ul>
+</div>
+<script type="text/javascript">
+
+    $(".devItem").click(function () {
+        window.parent.alerttest();
+    });
+
+</script>

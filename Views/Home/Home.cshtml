@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div data-role="page" id="homepage">
+    <div class="wrapper">
+    </div>
+    <div class="footer">
+        <center>
+            <a href="javascript:void(0)" class="home_button reg"><span class="home_button_text">注册<span></a>
+            <a href="javascript:void(0)" id="loginBtn" class="home_button login"><span class="home_button_text">登录<span></a>
+        </center>
+    </div> 
+</div>
+
+<div data-role="page" id="loginpage" class="common_bg">
+    <center>
+        <dl class="dl_form">
+            <dt><img class="img_close" src="/img/close.png" /></dt>
+            <dt>
+            <dd>
+                <input class="dd_form" type="text" value="" placeholder="请输入手机号或者邮箱" />
+            </dd>
+            <dd class="dd_line"></dd>
+            <dd>
+                <input class="dd_form" type="password" value="" placeholder="请输入密码" />
+            </dd>
+            </dt>
+            <dt>
+                <input class="common_button" type="button" value="确定" />
+            </dt>
+            <dt>
+                <label class="forget_pwd login_font">忘记密码</label><label class="join login_font">立即加入</label>
+            </dt>
+        </dl>
+    </center>
+</div>
+
+@section scripts{
+<script type="text/javascript">
+    $(function () {
+        var screenHeight = $(window).height();
+        $("#homgbg").height(screenHeight);
+
+        $("#loginBtn").click(function () {
+            Common.slideup("loginpage");
+        });
+    });
+
+</script>    
+}
+

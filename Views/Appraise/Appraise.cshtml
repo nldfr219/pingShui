@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "评价顾问-聘谁";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div data-role='page' id='appraise' >
+    <div class="cusContent graybg"  data-role="content">
+        <div class="headerblueimg">
+            评价顾问
+        </div>
+        <div>
+            <div class='lsrow'>
+                <span class='u-Info'>
+                    作为「聘谁」最重要的服务对象，我们真挚的邀请您对顾问的电话服务提出宝贵的建议！
+                </span>
+            </div>
+            <div class="whiteBg">
+                <table class="editTable" style="margin-top:15px;">
+                    <tr>
+                        <td rowspan="5">
+                            <img src="" id="avatarimg" class="paddingleft10" width="120" height="120" />
+                        </td>
+                        <td class="appraise-name paddingleft10" style="position:relative" ><span class="fontBlue18" id="realname"></span></td>
+                    </tr>
+                    <tr><td class="appraise-label paddingleft10" id="position"></td></tr>
+                    <tr><td class="appraise-label paddingleft10" id="company"></td></tr>
+                    <tr><td class="appraise-label paddingleft10" id="phone"></td></tr>
+                    <tr><td class="appraise-label paddingleft10" style="height:25px" id="email"></td></tr>
+                </table>
+            </div>
+            <center>
+                <div class="apprStarSelect">
+                    <img src="/img/starg.png" width="30" height="30" class="star devstarselect" />
+                    <img src="/img/starg.png" width="30" height="30" class="star devstarselect" />
+                    <img src="/img/starg.png" width="30" height="30" class="star devstarselect" />
+                    <img src="/img/starg.png" width="30" height="30" class="star devstarselect " />
+                    <img src="/img/starg.png" width="30" height="30" class="star devstarselect" />
+                </div>
+            </center>
+            @*<ul class="ulcontent2">
+                <li id="gtagli">
+
+                            <div>
+                                <ul id="gtag-show" class="u-tag2">
+                                    <li><span class='tag-g'>速度快</span></li>
+                                    <li><span class='tag-g'>精准</span></li>
+                                    <li><span class='tag-g'>资源多</span></li>
+                                </ul>
+                            </div>
+                </li>
+                <li class="line"></li>
+                <li id="btagli">
+
+                    <ul class="u-tag2" id="btag-show">
+                        <li><span class='tag-b'>对行业太不了解</span></li>
+                        <li><span class='tag-b'>对行业太不了解</span></li>
+                        <li><span class='tag-b'>对行业太不了解</span></li>
+                    </ul>
+
+                </li>
+                <li class="line"></li>
+                <li id="btagli">
+
+                    <input id="tagText" type="text" name="tagText" style="margin-left:15px; margin-right:20px" placeholder="请输入最多7个字的简评" data-role="none" class="text" />
+
+                </li>
+                <li class="line"></li>
+                <li id="btagli" style="height:43px">
+
+                    <a href="javascript:void(0)" class="floatLeft btnSmall darkgrayBg fontWhite14 addbtag" data-role="none" id="addbtag">待改进添加</a>
+                    <a href="javascript:void(0)" class="floatRight btnSmall blueBg fontWhite14 addgtag" data-role="none" id="addgtag">好评添加</a>
+
+                </li>
+            </ul>*@
+            <div class="module">
+                @*<div class="prompt fontBlack">在这领域您最认可的精英是？(被推荐人也满意我们服务才能看到)</div>
+                <ul class="ulmodule">
+                    <li><input type="text" placeholder="姓名" class="text" name="phone" data-role="none" /></li>
+                    <li class="line"></li>
+                    <li><input type="password" placeholder="手机号" class="text" name="password" data-role="none" /></li>
+                    <li class="line"></li>
+                    <li><input type="password" placeholder="目前职位" class="text" name="repassword" data-role="none" /></li>
+                </ul>*@
+                <a href="javascript:void(0)" id="appsubmit" class="btnFill margintop20 blueBg fontWhite blod">提价评价</a>
+                <div style="height:40px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div data-role='page' id='resultPage'>
+    <div class="cusContent" data-role="content">
+        <center>
+            <br />
+            <br />
+            感谢您的参与
+        </center>
+    </div>
+</div>
+
+<a id="cushref" data-transition="slide"></a>
+<a id="cureverse" data-transition="slide" data-direction="reverse"></a>
+@section headerlink{
+<script src="/js/whojoin/underscore.js"></script>
+<script src="/js/whojoin/backbone-min.js"></script>
+}
+
+@section scripts{
+<script type="text/javascript" src="/js/whojoin/common.js"></script>
+<script type="text/javascript" src="/js/whojoin/lib/appraise.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        var screenWidth = $(window).width();
+        $("#tagText").width(screenWidth - 35);
+
+        $(".devstarselect").hover(function () {
+
+            $(".devstarselect").attr("src", "/img/starg.png");
+            $(".devstarselect").addClass("devns");
+            $(this).attr("src", "/img/starlight.png").addClass("devs");
+            $(this).prevAll(".devstarselect").each(function () {
+                $(this).attr("src", "/img/starlight.png").addClass("devs");
+            });
+        }, null);
+
+        var appraiseView = AppraiseViewSingleton();
+        appraiseView.render();
+
+    });
+
+</script>    
+    
+}

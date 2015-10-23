@@ -1,0 +1,174 @@
+﻿
+@{
+    ViewBag.Title = ViewBag.Name +"的名片";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="imgcont" style="position:relative; " data-role="none">
+    <img style="position:absolute; top:0;" src="/img/sharecard.png" id="cardbg" width="100%" data-role="none" />
+    <div style="position:absolute; bottom:0px; width: 100%; height:150px;" data-role="none">
+        @*<div style="float:left;position:absolute; width:50%" id="parentScroll">
+                <ul class="cardcon" >
+                    <li class="img"><img src="" width="80px" height="80px" /></li>
+                    <li>snow</li>
+                    <li>职位@("@")Company</li>
+                </ul>
+            </div>
+            <div style="float: right; display: inline; width: 50%" id="childScroll">
+                <ul class=""></ul>
+            </div>*@
+        <table width="100%" class="cardcon" data-role="none">
+            <tr>
+                <td rowspan="2" class="left" width="50%"><img id="myAvatar" width="80px" height="80px" /></td>
+                <td width="50%"><img src="/img/weixincard.png" width="40" height="40" /><span>@ViewBag.Weixin</span></td>
+            </tr>
+            <tr><td></td></td><td>Mobile:@ViewBag.Phone</td></tr>
+            <tr><td class="left">@ViewBag.Name</td><td>Email:pinshei@whojoin.cn</td></tr>
+            <tr><td colspan="2" class="left" height="60px;">@(ViewBag.Position + "@" + ViewBag.Company)</td></tr>
+        </table>
+    </div>
+</div>
+<br />
+<center>
+    <a href="javascript:void(0)" id="editMy" data-role="none" class="btn">生成自己的招聘需求</a>
+</center>
+@section scripts{
+<script src='/js/public.js'></script>
+<script type="text/javascript">
+    var tbwidth = $(window).width();
+    $("#cardbg").width(tbwidth).height(tbwidth);
+    $("#imgcont").height(tbwidth);
+
+    var avatar = "@(ViewBag.Avatar)";
+    if (Common.getDisplayText(avatar) == "") {
+        avatar = "/img/moren.png";
+    }
+    else {
+        avatar = Common.getImgServerHost() + "@(ViewBag.Avatar)";
+    }
+
+    $("#myAvatar").attr("src",avatar);
+
+    function setWeixin(data)
+    {
+        var _gUrl = window.location.href;
+        var _newticket = "jsapi_ticket=" + data.jsapi_ticket + "&noncestr=" + data.noncestr + "&timestamp=" + data.timestamp + "&url=" + _gUrl;
+
+        var s = new jsSHA(_newticket, "TEXT");
+        var sig = s.getHash("SHA-1", "HEX");
+
+        wx.config({
+            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: 'wxbc9362872bb29441', // 必填，公众号的唯一标识
+            timestamp: data.timestamp, // 必填，生成签名的时间戳
+            nonceStr: data.noncestr, // 必填，生成签名的随机串
+            signature: sig,// 必填，签名，见附录1
+            jsApiList: [
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'hideMenuItems',
+                'showMenuItems'
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+
+        wx.ready(function () {
+
+            var wxData = {
+                title: '@(ViewBag.Name)的名片',
+                desc: '@(ViewBag.Position + "@" + ViewBag.Company), 为天使汇寻找舵主@("@")成都',
+                link: _gUrl,
+                avatar: avatar,
+                imgUrl: avatar
+            }
+            wx.checkJsApi({
+                jsApiList: [
+                    'checkJsApi',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'hideMenuItems',
+                    'showMenuItems'
+                ],
+                success: function (res) {
+                    
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: wxData.title,
+                desc: wxData.desc,
+                link: wxData.link,
+                imgUrl: wxData.avatar,
+                trigger: function (res) {
+
+                },
+                success: function (res) {
+                    
+                },
+                cancel: function (res) {
+                    
+                },
+                fail: function (res) {
+                    
+                }
+            });
+            wx.onMenuShareTimeline({
+                title: wxData.title, // 分享标题
+                link: wxData.link, // 分享链接
+                imgUrl: wxData.imgUrl, // 分享图标
+                success: function () {
+                   
+                },
+                cancel: function () {
+                   
+                }
+            });
+            wx.onMenuShareQQ({
+                title: wxData.title, // 分享标题
+                desc: wxData.desc, // 分享描述
+                link: wxData.link, // 分享链接
+                imgUrl: wxData.avatar, // 分享图标
+                success: function () {
+                    
+                },
+                cancel: function () {
+                    
+                }
+            });
+            wx.onMenuShareWeibo({
+                title: wxData.title, // 分享标题
+                desc: wxData.desc, // 分享描述
+                link: wxData.link, // 分享链接
+                imgUrl: wxData.imgUrl,
+                success: function () {
+                    
+                },
+                cancel: function () {
+                   
+                }
+            });
+        });
+    }
+
+    
+
+    $.ajax({
+        url: '/Users/GetTicket',
+        type: 'get',
+        dataType: "json",
+        cache: false,
+        success: function (data) {
+            setWeixin(data)
+        }
+    });
+
+    $("#editMy").click(function () {
+        location.href = "/Users/EditCard?v=1";
+    });
+
+</script>
+    
+}

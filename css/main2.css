@@ -1,0 +1,76 @@
+﻿/* tag start*/
+.u-tag3{
+    display:block;
+	margin-left:10px;
+    margin-right:10px;
+	list-style:none;
+    padding-right:10px;
+    margin-top:7px;
+    width:100%;
+    height:20px;
+    padding:0px;
+}
+.u-tag3 li{
+	float:left;
+	height:28px;
+	line-height:28px;
+	font-size:14px;
+}
+.u-tag3 li .tag-g{
+    color:#2AAAC9;
+    border:solid 1px #2AAAC9;
+	border-radius:3px;
+	margin-right:10px;
+    padding:2px 5px;
+}
+.u-tag3 li .tag-g-s{
+    border:solid 1px #2AAAC9;
+    color:#fff;
+    background-color:#2AAAC9;
+	border-radius:3px;
+	margin-right:10px;
+    padding:2px 5px;
+}
+
+.u-tag3 li .tag-b{
+    color:#9B9B9B;
+    border:solid 1px #9B9B9B;
+	border-radius:3px;
+	margin-right:10px;
+    padding:2px 5px;
+}
+
+.u-tag3 li .tag-b-s{
+    color:#fff;
+    border:solid 1px #9B9B9B;
+    background-color:#9B9B9B;
+	border-radius:3px;
+	margin-right:10px;
+    padding:2px 5px;
+}
+
+.tagtext {
+ 
+    height:28px;
+    line-height:28px;
+    font-size:14px;
+    width:150px;
+    border:none;
+    vertical-align:middle;
+    left:10px;
+    border:1px solid #2AAAC9;
+}
+
+.tagbtext{
+ 
+    height:28px;
+    line-height:28px;
+    font-size:14px;
+    width:120px;
+    border:none;
+    vertical-align:middle;
+    left:10px;
+    border:1px solid #9B9B9B;
+}
+
+/* tag end */
